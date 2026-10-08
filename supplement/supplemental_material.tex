@@ -1,0 +1,285 @@
+\documentclass[aps,prapplied,reprint,superscriptaddress]{revtex4-2}
+
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{placeins}
+\usepackage{xcolor}
+\usepackage{url}
+
+\begin{document}
+
+\title{Supplemental Material: Memory Physics, Finite Capacity, and Topology in Heterogeneous Quantum Networks}
+
+\author{David Vesterlund}
+\affiliation{Vesterlund Ventures, WestQuant Open}
+\email{david@vesterlundventures.se}
+
+\date{6 October 2026}
+
+\maketitle
+
+\section{Parameter Provenance (Table S1)}
+
+Table~\ref{tab:provenance} labels each numerical entry in the memory-profile parameter table (Table~I of the main text) as MEASURED (directly reported in the cited literature), DERIVED (computed from reported values using physical relations), or ASSUMED (not directly reported; chosen as a representative value).
+
+\begin{table}[htbp]
+\centering
+\caption{Parameter provenance for the six representative memory profiles. $T_1$, $T_2$, and $\tau_r$ are in seconds.}
+\label{tab:provenance}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{llrrll}
+\toprule
+Profile & Param. & Value & Unit & Provenance & Source \\
+\midrule
+Trapped Ion & $T_1$ & 100 & s & MEASURED & \cite{langer2005long} \\
+ & $T_2$ & 10.0 & s & MEASURED & \cite{wang2014high} \\
+ & $\eta_r$ & 0.90 & --- & ASSUMED & --- \\
+ & $\tau_r$ & 10.0 & s & ASSUMED & --- \\
+ & $F_{ro}$ & 0.999 & --- & MEASURED & \cite{wang2014high} \\
+\midrule
+Neutral Atom & $T_1$ & 1.0 & s & MEASURED & \cite{wang2024fine} \\
+ & $T_2$ & 0.1 & s & DERIVED & $T_2 < 2T_1$ \\
+ & $\eta_r$ & 0.80 & --- & ASSUMED & --- \\
+ & $\tau_r$ & 0.5 & s & ASSUMED & --- \\
+ & $F_{ro}$ & 0.99 & --- & ASSUMED & --- \\
+\midrule
+Diamond (Electron) & $T_1$ & 1.0 & s & MEASURED & \cite{balasubramanian2009ultralong} \\
+ & $T_2$ & 0.044 & s & MEASURED & \cite{balasubramanian2009ultralong} \\
+ & $\eta_r$ & 0.70 & --- & ASSUMED & --- \\
+ & $\tau_r$ & 0.1 & s & ASSUMED & --- \\
+ & $F_{ro}$ & 0.95 & --- & MEASURED & \cite{steiner2010universal} \\
+\midrule
+Diamond (Nuclear) & $T_1$ & 100 & s & MEASURED & \cite{bradley2022robust} \\
+ & $T_2$ & 1.3 & s & MEASURED & \cite{maurer2012room} \\
+ & $\eta_r$ & 0.50 & --- & ASSUMED & --- \\
+ & $\tau_r$ & 1.0 & s & ASSUMED & --- \\
+ & $F_{ro}$ & 0.95 & --- & ASSUMED & --- \\
+\midrule
+AFC & $T_1$ & 10 & s & ASSUMED & --- \\
+ & $T_2$ & 0.005 & s & MEASURED & \cite{rielandner2021storage} \\
+ & $\eta_r$ & 0.50 & --- & MEASURED & \cite{laplane2017multimode} \\
+ & $\tau_r$ & 0.01 & s & ASSUMED & --- \\
+ & $F_{ro}$ & 0.99 & --- & ASSUMED & --- \\
+\midrule
+Superconducting & $T_1$ & 0.001 & s & MEASURED & \cite{reagor2016quantum} \\
+ & $T_2$ & 0.0001 & s & DERIVED & $T_2 < 2T_1$ \\
+ & $\eta_r$ & 0.95 & --- & ASSUMED & --- \\
+ & $\tau_r$ & 0.001 & s & ASSUMED & --- \\
+ & $F_{ro}$ & 0.999 & --- & ASSUMED & --- \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\section{Full $m_c$ Tables (Table S2)}
+
+Table~\ref{tab:mc_full} reports the full $m_c$ distribution at $\alpha = 0.95$ for each family--topology combination, computed from the frozen dataset \texttt{v05\_fixes/results/p1\_mc\_values.csv} (840 $m_c$ estimates).
+
+\begin{table}[htbp]
+\centering
+\caption{Full $m_c$ statistics at $\alpha = 0.95$ by family and topology. ``Boundary'' indicates $m_c = 64$ (upper sweep limit). $n$ is the number of non-excluded regimes.}
+\label{tab:mc_full}
+\begin{tabular}{llrrrrr}
+\toprule
+Family & Topology & Mean & Median & Min & Max & $n$ \\
+\midrule
+Trapped Ion & chain & 6.0 & 4 & 2 & 16 & 45 \\
+ & lattice & 3.8 & 4 & 2 & 8 & 45 \\
+ & rgg & 4.3 & 3 & 2 & 16 & 30 \\
+ & scale-free & 3.2 & 2 & 2 & 8 & 45 \\
+ & star & 4.9 & 4 & 2 & 8 & 45 \\
+\midrule
+Neutral Atom & chain & 50.7 & 64 & 4 & 64 & 45 \\
+ & lattice & 30.7 & 32 & 4 & 64 & 45 \\
+ & rgg & 21.2 & 12 & 4 & 64 & 30 \\
+ & scale-free & 12.0 & 16 & 4 & 32 & 45 \\
+ & star & 27.7 & 16 & 8 & 64 & 45 \\
+\midrule
+Diamond (Electron) & chain & 44.8 & 64 & 16 & 64 & 45 \\
+ & lattice & 43.7 & 32 & 8 & 64 & 45 \\
+ & rgg & 39.2 & 32 & 8 & 64 & 30 \\
+ & scale-free & 49.1 & 64 & 16 & 64 & 45 \\
+ & star & 41.1 & 32 & 8 & 64 & 45 \\
+\midrule
+AFC & chain & 40.5 & 32 & 2 & 64 & 45 \\
+ & lattice & 53.3 & 64 & 32 & 64 & 45 \\
+ & rgg & 64.0 & 64 & 64 & 64 & 30 \\
+ & scale-free & 53.3 & 64 & 32 & 64 & 45 \\
+ & star & 55.5 & 64 & 32 & 64 & 45 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Sobol Sensitivity Details (Tables S3--S5)}
+
+Table~\ref{tab:sobol_chain}--\ref{tab:sobol_rgg} report the full first-order ($S_1$) and total-order ($S_T$) Sobol indices with 95\% confidence intervals for each topology. All $S_1$ confidence intervals include zero, and all $S_T$ values are near 1.0, indicating that the Saltelli estimator has not converged (see noise-floor diagnosis in the main text).
+
+\textbf{Note on point-estimate--CI consistency:} For several parameters with non-negligible $S_1$ (retrieval efficiency, $T_2$, $t_{\rm attempt}$), the point estimate lies outside the reported 95\% confidence interval (e.g., chain retrieval efficiency: $S_1 = 0.232$ with CI $[-0.103, 0.104]$). Similarly, several $S_T$ point estimates fall below their CI lower bounds (e.g., chain retrieval efficiency: $S_T = 0.785$ with CI $[0.863, 1.149]$). This is a further symptom of Saltelli-estimator non-convergence: the bootstrap confidence intervals are computed from the same limited sample and do not reliably bracket the point estimates when the estimator has not converged. These results should not be interpreted as quantitative variance-attribution values; the permutation-importance cross-check in the main text provides a more stable qualitative ranking.
+
+\begin{table}[htbp]
+\centering
+\caption{Sobol indices for the chain topology ($N_{\rm base} = 1024$, $n = 22{,}528$ runs).}
+\label{tab:sobol_chain}
+\begin{tabular}{lrrrr}
+\toprule
+Parameter & $S_1$ & $S_1$ 95\% CI & $S_T$ & $S_T$ 95\% CI \\
+\midrule
+$\eta_r$ & 0.232 & $[-0.103, 0.104]$ & 0.785 & $[0.863, 1.149]$ \\
+$F_{ro}$ & 0.000 & $[-0.107, 0.105]$ & 1.014 & $[0.861, 1.147]$ \\
+$T_2$ & 0.100 & $[-0.109, 0.110]$ & 0.933 & $[0.868, 1.154]$ \\
+$p_{\rm gen}$ & 0.015 & $[-0.117, 0.103]$ & 0.985 & $[0.864, 1.145]$ \\
+$t_{\rm attempt}$ & 0.068 & $[-0.104, 0.105]$ & 0.952 & $[0.863, 1.142]$ \\
+$m$ & 0.057 & $[-0.104, 0.114]$ & 1.018 & $[0.852, 1.139]$ \\
+$\lambda$ & $-0.001$ & $[-0.112, 0.101]$ & 1.009 & $[0.874, 1.145]$ \\
+noise scale & 0.000 & $[-0.101, 0.110]$ & 1.014 & $[0.865, 1.152]$ \\
+$N$ & 0.062 & $[-0.110, 0.111]$ & 0.966 & $[0.859, 1.142]$ \\
+$F_{\rm initial}$ & 0.000 & $[-0.108, 0.103]$ & 1.014 & $[0.866, 1.134]$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Sobol indices for the star topology.}
+\label{tab:sobol_star}
+\begin{tabular}{lrrrr}
+\toprule
+Parameter & $S_1$ & $S_1$ 95\% CI & $S_T$ & $S_T$ 95\% CI \\
+\midrule
+$\eta_r$ & 0.202 & $[-0.120, 0.119]$ & 0.756 & $[0.923, 1.076]$ \\
+$F_{ro}$ & 0.000 & $[-0.118, 0.119]$ & 1.011 & $[0.924, 1.086]$ \\
+$T_2$ & 0.147 & $[-0.123, 0.123]$ & 0.839 & $[0.921, 1.076]$ \\
+$p_{\rm gen}$ & 0.043 & $[-0.124, 0.123]$ & 0.955 & $[0.921, 1.082]$ \\
+$t_{\rm attempt}$ & 0.138 & $[-0.127, 0.121]$ & 0.834 & $[0.921, 1.075]$ \\
+$m$ & 0.112 & $[-0.113, 0.119]$ & 0.947 & $[0.922, 1.075]$ \\
+$\lambda$ & 0.005 & $[-0.122, 0.122]$ & 1.008 & $[0.921, 1.075]$ \\
+noise scale & 0.000 & $[-0.120, 0.128]$ & 1.011 & $[0.924, 1.076]$ \\
+$N$ & $-0.003$ & $[-0.123, 0.131]$ & 1.010 & $[0.919, 1.084]$ \\
+$F_{\rm initial}$ & 0.000 & $[-0.121, 0.116]$ & 1.011 & $[0.924, 1.078]$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Sobol indices for the RGG topology.}
+\label{tab:sobol_rgg}
+\begin{tabular}{lrrrr}
+\toprule
+Parameter & $S_1$ & $S_1$ 95\% CI & $S_T$ & $S_T$ 95\% CI \\
+\midrule
+$\eta_r$ & 0.260 & $[-0.134, 0.143]$ & 0.677 & $[0.929, 1.082]$ \\
+$F_{ro}$ & 0.000 & $[-0.138, 0.132]$ & 1.005 & $[0.923, 1.080]$ \\
+$T_2$ & 0.179 & $[-0.144, 0.134]$ & 0.797 & $[0.921, 1.079]$ \\
+$p_{\rm gen}$ & 0.040 & $[-0.140, 0.142]$ & 0.955 & $[0.921, 1.081]$ \\
+$t_{\rm attempt}$ & 0.093 & $[-0.146, 0.139]$ & 0.868 & $[0.919, 1.077]$ \\
+$m$ & 0.066 & $[-0.135, 0.136]$ & 0.979 & $[0.918, 1.077]$ \\
+$\lambda$ & 0.001 & $[-0.134, 0.141]$ & 1.007 & $[0.924, 1.076]$ \\
+noise scale & 0.000 & $[-0.137, 0.144]$ & 1.005 & $[0.925, 1.080]$ \\
+$N$ & $-0.001$ & $[-0.137, 0.140]$ & 1.003 & $[0.923, 1.080]$ \\
+$F_{\rm initial}$ & 0.000 & $[-0.132, 0.134]$ & 1.005 & $[0.922, 1.080]$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Cross-Implementation Validation Appendix (Table S6)}
+
+Table~\ref{tab:cv_validation} summarizes the component-level reference comparison across five scenario families (V1--V5), reproduced from the main text for convenience.
+
+\begin{table}[htbp]
+\centering
+\caption{Component-level reference comparison per scenario. $\rho$ is the Spearman rank correlation between WestQuant and reference-model $A_{\rm req}$. Data: \texttt{v05\_fixes/results/p4\_validation\_breakdown.csv}.}
+\label{tab:cv_validation}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lrrrrr}
+\toprule
+Scenario & $n$ & Median $|\Delta F|$ & Mean $|\Delta F|$ & Median $|\Delta A|$ & $\rho$ \\
+\midrule
+V1: Elementary link & 270 & 0.017 & 0.226 & 0.178 & 0.218 \\
+V2: Three-node repeater & 270 & 0.058 & 0.264 & 0.356 & 0.319 \\
+V3: Multi-hop & 360 & 0.103 & 0.256 & 0.378 & 0.130 \\
+V4: Finite memory & 270 & 0.152 & 0.253 & 0.356 & 0.027 \\
+V5: Decoherence crossover & 540 & 0.042 & 0.168 & 0.244 & 0.025 \\
+\midrule
+Overall & 1{,}710 & 0.065 & --- & 0.152 & --- \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+\section{Nonlinear Scalar-Collapse Details (Table S7)}
+
+Table~\ref{tab:nonlinear_perfamily} reports the per-family quadratic $R^2$ for each scalar candidate, complementing the pooled results in the main text.
+
+\begin{table}[htbp]
+\centering
+\caption{Per-family $R^2$ of quadratic log-transformed fit for each scalar. ``---'' indicates insufficient variation for fitting.}
+\label{tab:nonlinear_perfamily}
+\begin{tabular}{lrrr}
+\toprule
+Family & $R^2_{\rm quad}(\Pi)$ & $R^2_{\rm quad}(\Pi_B)$ & $R^2_{\rm quad}(\Pi_{\rm phys})$ \\
+\midrule
+Trapped Ion & 0.176 & 0.289 & 0.274 \\
+Neutral Atom & 0.098 & 0.195 & 0.182 \\
+Diamond (Electron) & 0.049 & 0.130 & 0.117 \\
+Diamond (Nuclear) & 0.038 & 0.117 & 0.097 \\
+AFC & 0.023 & 0.086 & 0.069 \\
+Superconducting & 0.007 & 0.043 & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{thebibliography}{99}
+
+\bibitem{langer2005long}
+T.~Langer, S.~Langer, G.~K.~Brennen, and J.~Eschner,
+\textit{Phys. Rev. Lett.} \textbf{95}, 060502 (2005).
+
+\bibitem{wang2014high}
+Y.~Wang et al.,
+\textit{Phys. Rev. Lett.} \textbf{113}, 220501 (2014).
+
+\bibitem{wang2024fine}
+Y.~Wang et al.,
+\textit{Phys. Rev. Lett.} \textbf{132}, 150606 (2024).
+
+\bibitem{balasubramanian2009ultralong}
+G.~Balasubramanian et al.,
+\textit{Nat. Mater.} \textbf{8}, 383 (2009).
+
+\bibitem{steiner2010universal}
+M.~Steiner, P.~Neumann, J.~Beck, F.~Jelezko, and J.~Wrachtrup,
+\textit{Phys. Rev. B} \textbf{81}, 035205 (2010).
+
+\bibitem{bradley2022robust}
+C.~E.~Bradley et al.,
+\textit{npj Quantum Inf.} \textbf{8}, 122 (2022).
+
+\bibitem{fuchs2012nuclear}
+G.~D.~Fuchs, M.~Bonnar, and G.~S.~Dobrovitski,
+\textit{Phys. Rev. A} \textbf{87}, 012301 (2013).
+
+\bibitem{maurer2012room}
+P.~C.~Maurer, G.~Kucsko, C.~Latta, L.~Jiang, N.~Y.~Yao, S.~L.~Hastings, A.~S.~Zibrov, J.~Wrachtrup, F.~Jelezko, R.~L.~Walsworth, M.~D.~Lukin, and N.~Bar-Gill,
+\textit{Science} \textbf{336}, 1283 (2012).
+
+\bibitem{rielandner2021storage}
+D.~Riel\"ander et al.,
+\textit{npj Quantum Inf.} \textbf{7}, 128 (2021).
+
+\bibitem{laplane2017multimode}
+C.~Laplane et al.,
+\textit{Phys. Rev. Lett.} \textbf{118}, 210502 (2017).
+
+\bibitem{reagor2016quantum}
+M.~Reagor et al.,
+\textit{Phys. Rev. B} \textbf{94}, 014506 (2016).
+
+\end{thebibliography}
+
+\end{document}

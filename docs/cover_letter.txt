@@ -1,0 +1,23 @@
+Cover Letter — Paper A
+=======================
+
+To the Editor, Quantum Reports
+
+Dear Editor,
+
+I submit the manuscript "Memory Physics, Finite Capacity, and Topology in Heterogeneous Quantum Networks" for consideration at Quantum Reports.
+
+The manuscript studies how quantum-memory physics, finite storage capacity, and network topology jointly shape end-to-end entanglement delivery. Using a discrete-event simulator with six representative memory profiles, it reports a memory-topology atlas of 9,360 completed runs, complemented by 8,730 confirmatory runs and an extended per-node memory-budget sweep.
+
+The central finding is that the tested scalar reductions do not provide a topology-independent collapse of memory capacity requirements. The retrieval-window parameter chi_r = tau_r * p_gen / t_attempt provides an interpretable physical descriptor, but an independent-channel approximation does not establish a network memory-sizing law. Among 840 threshold estimates, 35.5% reach the upper tested grid boundary, distinguishing finite-grid thresholds from asymptotic saturation. Heterogeneous placement favors hub and betweenness-based nodes in aggregate, with topology-specific exceptions.
+
+A companion methods manuscript, "Assessing Decision Reliability in Discrete-Event Simulation: A Quantum-Network Case Study," is being prepared for submission to Simulation Modelling Practice and Theory. The present article focuses on memory-profile, capacity, topology, and placement results. Shared simulator infrastructure and overlapping validation results are disclosed to both editors.
+
+The raw simulation datasets, frozen simulator, and figure-generation scripts are being prepared for a public reproducibility release. A public release URL, commit identifier, and archival DOI will be provided upon deposit.
+
+I declare no external funding. I am the developer of the WestQuant simulator, which creates a potential conflict of interest. The cross-implementation robustness check partially mitigates this concern.
+
+Sincerely,
+David Vesterlund
+Vesterlund Ventures, WestQuant Open
+ORCID: 0009-0000-6455-1141

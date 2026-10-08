@@ -1,0 +1,44 @@
+CHANGES LOG — Paper A (Quantum Reports)
+=========================================
+
+Revision from paper_a_v0.9.tex to paper_a_quantum_reports.tex
+Date: 8 October 2026
+
+STRUCTURAL CHANGES:
+
+1. ABSTRACT: Rewritten to remove unsupported claims
+   - Removed: 66.7% invariance pass rate
+   - Removed: 91.7% two-parameter extension
+   - Removed: 100% variance from tau_r, 0% from T2
+   - Removed: RF wins 5/7 decades
+   - Removed: "dimensionless law" claim
+   - Added: "interpretable descriptor, but an independent-channel approximation does not establish a network memory-sizing law"
+   - Added: "Four tested scalar reductions do not provide a topology-independent collapse; best pooled quadratic fit explains 37.9%"
+
+2. TITLE: Unchanged — "Memory Physics, Finite Capacity, and Topology in Heterogeneous Quantum Networks"
+
+3. THESIS: Rewritten to remove law claim
+   - Old: "governed by the coincidence-window parameter chi_r"
+   - New: "strongly regime-dependent and does not collapse to a topology-independent scalar"
+
+4. CONCLUSION: Rewritten to match conservative PDF
+   - Removed: five enumerated findings with strong claims
+   - Removed: 66.7%, 91.7%, 100%/0% variance, RF 5/7
+   - New: concise paragraph matching PDF conclusion
+
+5. CHI-LAW SECTION: Renamed to "Retrieval-Window Descriptor and Limits of Analytical Sizing"
+   - Removed: invariance test, factorial variance attribution, RF decade comparison
+   - Kept: independent-channel reference calculation, physical interpretation
+   - Added: "No predictive accuracy or invariance rate is asserted"
+
+6. DATA AVAILABILITY: Updated to honest status
+   - Old: claimed data already available at GitHub
+   - New: "repository scaffold prepared; raw datasets not yet deposited"
+
+7. KEYWORDS: Updated
+   - Old: "scaling laws, heterogeneous hardware"
+   - New: "discrete-event simulation, finite capacity, heterogeneous placement, reproducibility"
+
+8. DATE: Updated from "6 October 2026" to "8 October 2026"
+
+9. COMPANION WORK: Added explicit relationship to Paper 2

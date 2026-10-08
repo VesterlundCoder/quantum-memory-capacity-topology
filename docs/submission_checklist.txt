@@ -1,0 +1,51 @@
+Submission Checklist — Paper A (Quantum Reports)
+==================================================
+
+Date: 8 October 2026
+Status: NOT YET READY
+
+MANUSCRIPT:
+[x] Title matches PDF
+[x] Abstract matches PDF
+[x] Keywords updated
+[x] Date: 8 October 2026
+[x] Author: David Vesterlund, Vesterlund Ventures, WestQuant Open
+[x] ORCID: 0009-0000-6455-1141
+[x] Email: david@vesterlundventures.se
+[x] Compiles with tectonic (exit 0)
+[x] No undefined references
+[x] No overfull tables
+[x] All figures present in figures/
+
+CONTENT:
+[x] Removed: 66.7% invariance pass
+[x] Removed: 91.7% two-parameter extension
+[x] Removed: 100%/0% variance attribution
+[x] Removed: RF wins 5/7 decades
+[x] Removed: "dimensionless law" claim
+[x] Removed: T2 proportional to tau_r
+[x] Added: "interpretable descriptor, not a law"
+[x] Added: honest data availability statement
+[x] Added: companion work disclosure
+[x] References checked (authors, titles, DOIs)
+
+JOURNAL REQUIREMENTS:
+[ ] Quantum Reports Instructions for Authors verified
+[ ] Article type confirmed
+[ ] Abstract format confirmed
+[ ] Reference style confirmed
+[ ] AI declaration confirmed
+[ ] Supplement format confirmed
+
+REPRODUCIBILITY:
+[ ] Raw data deposited
+[ ] Frozen simulator archived
+[ ] Dependency lockfile committed
+[ ] Seed/configuration ledger deposited
+[ ] Figure scripts verified against deposited data
+[ ] Public release URL obtained
+[ ] Archival DOI obtained
+
+BLOCKERS:
+1. Data deposit not yet done
+2. Journal instructions not yet verified (429/403 errors)

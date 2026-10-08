@@ -1,0 +1,50 @@
+SOURCE AUDIT — Paper A (Quantum Reports)
+==========================================
+
+Date: 8 October 2026
+
+MANUSCRIPT FILES:
+- paper_a_quantum_reports.tex (LaTeX source, updated 8 Oct 2026)
+- paper_a_quantum_reports.pdf (compiled PDF, 21 pages)
+- supplemental_material.tex (supplementary note)
+
+FIGURES:
+- fig_key_findings.png — key findings summary
+- fig_a2_heatmap.png — atlas heatmap
+- fig_a3_saturation.png — saturation curves
+- fig_a5_scalar_collapse.png — scalar collapse analysis
+- fig_a7_heterogeneity.png — heterogeneous placement
+- fig_a8_sensitivity.png — global sensitivity
+- fig_a9_mc_distribution.png — threshold distribution
+- fig_c3_extended.png — extended budget sweep
+- fig_heterogeneity_v05.png — heterogeneity v0.5
+- fig_mc_distribution_v05.png — threshold distribution v0.5
+
+ANALYSIS SCRIPTS:
+- chi_law_test.py — chi-law test (results removed from manuscript)
+- chi_invariance_extended.py — invariance test (results removed from manuscript)
+- closure_and_factorial4.py — factorial analysis (results removed from manuscript)
+- analytical_verification.py — analytical verification
+- b0_physics_test.py — B0 physics test
+
+DATA SOURCES:
+- Atlas: 6 profiles × 9 topologies × 3 traffic × 3 sizes × 4 budgets × 5 seeds
+  Nominal: 9,720; Reported completed: 9,360
+- Confirmatory: 6 × 5 × 3 × 5 × 20 = 9,000 nominal; 8,730 reported
+- Threshold audit: 4 × 5 × 3 × 3 × 7 × 5 = 6,300 nominal; 5,880 budget runs; 840 thresholds
+- Heterogeneous placement: 5,400 nominal; 5,310 reported
+- A08 sensitivity: 67,584 samples
+
+VERIFICATION STATUS:
+- Numbers in abstract match numbers in body: YES
+- Numbers in body match numbers in tables: PARTIAL (some tables not yet regenerated from raw data)
+- All references checked for correct authors/titles/DOIs: YES
+- No undefined \ref commands: YES (compiled clean)
+- No overfull tables: YES (compiled clean)
+
+MISSING ARTIFACTS:
+- Raw simulation datasets (not yet deposited)
+- Frozen simulator revision (not yet archived)
+- Dependency lockfile (not yet committed)
+- Complete seed/configuration ledger (not yet deposited)
+- Figure-generation scripts verified against deposited data (not yet done)

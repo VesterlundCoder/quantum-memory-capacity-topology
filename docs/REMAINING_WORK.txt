@@ -1,0 +1,43 @@
+REMAINING WORK — Paper A (Quantum Reports)
+==========================================
+
+Status: 8 October 2026
+State: NOT YET READY for submission
+
+BLOCKERS (must resolve before submission):
+
+1. DATA DEPOSIT
+   - Raw simulation datasets not yet deposited in public release
+   - Frozen simulator revision not yet archived
+   - Dependency lockfile not yet committed
+   - Complete seed/configuration ledger not yet deposited
+   - Figure-generation scripts not yet verified against deposited data
+   Blocker: Public release URL, commit ID, checksums, DOI needed
+
+2. EXPERIMENT PROVENANCE
+   - Atlas: 9,720 nominal cells, 9,360 reported completed — exclusion audit required
+   - Confirmatory: 9,000 nominal, 8,730 reported — exclusion audit required
+   - Threshold audit: 6,300 nominal, 5,880 budget runs, 840 threshold estimates — verify from raw data
+   - Heterogeneous placement: 5,400 nominal, 5,310 reported — verify exclusions
+   - A08 sensitivity: 67,584 samples — verify split, feature list, leakage
+
+3. PARAMETER PROVENANCE
+   - Memory profile parameters need primary-source verification
+   - T2, tau_r, eta_r, F_ro values need DOI/page references
+   - Profiles are representative parameter combinations, not realized hardware stacks
+
+4. MODEL VERSIONING
+   - Readout model: frozen multiplicative rule (F_out = F_ro * F)
+   - Depolarizing rule (F_out = F_ro*F + (1-F_ro)/4) is a later version not used for frozen results
+   - Must document which model version generated which dataset
+
+5. JOURNAL REQUIREMENTS
+   - Quantum Reports Instructions for Authors not yet verified (429/403 errors)
+   - Article type, abstract format, reference style, declarations not confirmed
+   - Author affiliation/address to be confirmed
+
+NON-BLOCKING (recommended but not required for submission):
+
+- Sobol variance decomposition: removed due to bootstrap bug; could be re-run with Saltelli method
+- Independent native SeQUeNCe protocol validation: future work
+- Hardware-calibrated validation: future work

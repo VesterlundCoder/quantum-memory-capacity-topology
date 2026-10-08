@@ -1,0 +1,21 @@
+claim_id,manuscript_location,claim,experiment_id,data_source,code_revision,analysis_script,result,uncertainty,status
+C001,abstract,9360 completed atlas runs,atlas,atlas_results,unknown,atlas_runner.py,9360/9720,n/a,QUALIFIED
+C002,abstract,8730 confirmatory runs,confirmatory,confirmatory_results,unknown,confirmatory_runner.py,8730/9000,n/a,QUALIFIED
+C003,abstract,840 threshold estimates,threshold_audit,threshold_results,unknown,threshold_runner.py,840,n/a,QUALIFIED
+C004,abstract,22.3% reach 95% by m<=4,threshold_audit,threshold_results,unknown,threshold_analysis.py,22.3%,n/a,QUALIFIED
+C005,abstract,35.5% boundary cases at m=64,threshold_audit,threshold_results,unknown,threshold_analysis.py,35.5%,n/a,QUALIFIED
+C006,abstract,best pooled quadratic fit 37.9%,scalar_collapse,scalar_results,unknown,scalar_analysis.py,37.9%,n/a,QUALIFIED
+C007,abstract,5310 heterogeneous-placement runs,heterogeneous_placement,placement_results,unknown,placement_runner.py,5310/5400,n/a,QUALIFIED
+C008,abstract,hub/betweenness outperform peripheral,heterogeneous_placement,placement_results,unknown,placement_analysis.py,aggregate ordering,n/a,QUALIFIED
+C009,abstract,harmonized model comparisons limited robustness,cross_impl,cross_impl_results,unknown,cross_impl_analysis.py,limited,n/a,QUALIFIED
+C010,body,chi_r = tau_r * p_gen / t_attempt,analytical,n/a,n/a,n/a,descriptor,n/a,VERIFIED
+C011,body,AFC 2-hop ~1252 channels,analytical,n/a,n/a,n/a,1252,n/a,VERIFIED
+C012,body,independent-channel approximation does not establish law,analytical,n/a,n/a,n/a,qualitative,n/a,VERIFIED
+C013,body,RF surrogate R2 per topology,global_sensitivity,a08_results,unknown,sensitivity_analysis.py,0.42-0.97,n/a,QUALIFIED
+C014,body,permutation importance is predictive not causal,global_sensitivity,a08_results,unknown,sensitivity_analysis.py,qualitative,n/a,VERIFIED
+C015,body,Sobol bootstrap unreliable,global_sensitivity,n/a,unknown,sobol_analysis.py,removed,n/a,REMOVED
+C016,body,66.7% invariance pass,invariance_test,invariance_results,unknown,invariance_analysis.py,removed,n/a,REMOVED
+C017,body,91.7% two-parameter extension,invariance_test,invariance_results,unknown,invariance_analysis.py,removed,n/a,REMOVED
+C018,body,100% variance from tau_r,factorial,factorial_results,unknown,factorial_analysis.py,removed,n/a,REMOVED
+C019,body,0% variance from T2,factorial,factorial_results,unknown,factorial_analysis.py,removed,n/a,REMOVED
+C020,body,RF wins 5/7 decades,rf_decade,rf_results,unknown,rf_analysis.py,removed,n/a,REMOVED
