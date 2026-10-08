@@ -10,22 +10,34 @@ Target journal: Quantum Reports (MDPI)
 
 This repository is prepared for a public reproducibility release. The manuscript is under final revision. The raw simulation datasets, frozen simulator, dependency lockfile, complete seed/configuration ledger, and figure-generation scripts will be deposited before submission.
 
+## Format
+
+The manuscript uses the official MDPI LaTeX class (`Definitions/mdpi.cls`) with the `quantumrep` journal option. Compile with:
+
+```bash
+cd manuscript
+tectonic paper_a_quantum_reports.tex
+```
+
 ## Repository Structure
 
 ```
 quantum-memory-capacity-topology/
-├── manuscript/          # LaTeX source and compiled PDF
-│   ├── figures/         # Figure files
+├── manuscript/              # LaTeX source and compiled PDF
+│   ├── Definitions/        # MDPI class files (mdpi.cls, mdpi.bst, logos)
+│   ├── figures/             # Figure files
 │   ├── paper_a_quantum_reports.tex
 │   └── paper_a_quantum_reports.pdf
-├── docs/                # Documentation
+├── docs/                    # Documentation
 │   ├── REMAINING_WORK.txt
 │   ├── CHANGES.txt
 │   ├── SOURCE_AUDIT.txt
-│   └── claim_ledger.csv
-├── data/                # Simulation data (to be deposited)
-├── scripts/             # Analysis and figure-generation scripts
-├── supplement/          # Supplementary material
+│   ├── claim_ledger.csv
+│   ├── cover_letter.txt
+│   └── submission_checklist.txt
+├── data/                    # Simulation data (to be deposited)
+├── scripts/                 # Analysis and figure-generation scripts
+├── supplement/              # Supplementary material
 └── README.md
 ```
 

@@ -1,4 +1,18 @@
-\documentclass[aps,prapplied,reprint,superscriptaddress]{revtex4-2}
+\documentclass[quantumrep,article,submit,moreauthors]{Definitions/mdpi}
+
+\firstpage{1}
+\makeatletter
+\setcounter{page}{\@firstpage}
+\makeatother
+\pubvolume{1}
+\issuenum{1}
+\articlenumber{0}
+\pubyear{2026}
+\copyrightyear{2026}
+\datereceived{ }
+\daterevised{8 October 2026}
+\dateaccepted{ }
+\datepublished{ }
 
 \usepackage{amsmath,amssymb}
 \usepackage{graphicx}
@@ -12,24 +26,29 @@
 \usepackage{url}
 
 \graphicspath{{figures/}}
+\emergencystretch=3em
+\tolerance=2000
+\hbadness=10000
+
+% ORCID
+\newcommand{\orcidauthorA}{0009-0000-6455-1141}
+
+\Title{Memory Physics, Finite Capacity, and Topology in Heterogeneous Quantum Networks}
+
+\Author{David Vesterlund{$^{1}$}\orcidA{}}
+
+\AuthorNames{David Vesterlund}
+
+\address{%
+$^{1}$ \quad Vesterlund Ventures, WestQuant Open; david@vesterlundventures.se}
+
+\corres{Correspondence: david@vesterlundventures.se}
+
+\abstract{Quantum-network capacity planning couples memory physics, finite storage, topology, and traffic. We study these interactions using a discrete-event simulator with six representative memory profiles. A memory--topology atlas contains 9{,}360 completed runs, complemented by 8{,}730 confirmatory runs and an extended per-node memory-budget sweep. We distinguish a threshold relative to the best performance observed on a finite grid from a physical saturation limit. Among 840 reported threshold estimates, 22.3\% reach 95\% of the observed maximum by four slots per node, while 35.5\% first reach it at the upper grid boundary of 64 slots. Four tested scalar reductions do not provide a topology-independent collapse; the best pooled quadratic fit explains 37.9\% of response variance. The retrieval-window parameter $\chi_r = \tau_r\, p_{\rm gen} / t_{\rm attempt}$ provides an interpretable descriptor, but an independent-channel approximation does not establish a network memory-sizing law. In 5{,}310 heterogeneous-placement runs, hub and betweenness-based placement outperform peripheral placement in aggregate, with topology-specific exceptions. Coupling assumptions change absolute performance while preserving the aggregate strategy ordering. Harmonized model comparisons provide limited robustness evidence, not independent native-protocol validation. The results support model-specific capacity and placement analysis with explicit metric definitions, finite-grid limitations, and interface assumptions.}
+
+\keyword{quantum networks; quantum memory; discrete-event simulation; finite capacity; heterogeneous placement; reproducibility}
 
 \begin{document}
-
-\title{Memory Physics, Finite Capacity, and Topology in Heterogeneous Quantum Networks}
-
-\author{David Vesterlund}
-\affiliation{Vesterlund Ventures, WestQuant Open}
-\email{david@vesterlundventures.se}
-
-\date{8 October 2026}
-
-\thanks{ORCID: 0009-0000-6455-1141}
-
-\begin{abstract}
-Quantum-network capacity planning couples memory physics, finite storage, topology, and traffic. We study these interactions using a discrete-event simulator with six representative memory profiles. A memory--topology atlas contains 9{,}360 completed runs, complemented by 8{,}730 confirmatory runs and an extended per-node memory-budget sweep. We distinguish a threshold relative to the best performance observed on a finite grid from a physical saturation limit. Among 840 reported threshold estimates, 22.3\% reach 95\% of the observed maximum by four slots per node, while 35.5\% first reach it at the upper grid boundary of 64 slots. Four tested scalar reductions do not provide a topology-independent collapse; the best pooled quadratic fit explains 37.9\% of response variance. The retrieval-window parameter $\chi_r = \tau_r\, p_{\rm gen} / t_{\rm attempt}$ provides an interpretable descriptor, but an independent-channel approximation does not establish a network memory-sizing law. In 5{,}310 heterogeneous-placement runs, hub and betweenness-based placement outperform peripheral placement in aggregate, with topology-specific exceptions. Coupling assumptions change absolute performance while preserving the aggregate strategy ordering. Harmonized model comparisons provide limited robustness evidence, not independent native-protocol validation. The results support model-specific capacity and placement analysis with explicit metric definitions, finite-grid limitations, and interface assumptions.
-\end{abstract}
-
-\maketitle
 
 \begin{figure*}[t]
 \centering
@@ -37,8 +56,6 @@ Quantum-network capacity planning couples memory physics, finite storage, topolo
 \caption{Key findings at a glance. The retrieval-window parameter $\chi_r = \tau_r\, p_{\rm gen} / t_{\rm attempt}$ (where $\tau_r$ is the retrieval decay time, not $T_2$) provides an interpretable descriptor but does not establish a universal memory-sizing law; the 95\%-of-observed-maximum memory threshold is strongly regime-dependent with 35.5\% of regimes as boundary cases at $m=64$; and hub/bottleneck placement outperforms peripheral placement in aggregate under the tested heterogeneous configurations.}
 \label{fig:key_findings}
 \end{figure*}
-
-\noindent\textbf{Keywords:} quantum networks, quantum memory, discrete-event simulation, finite capacity, heterogeneous placement, reproducibility
 
 \section{Introduction}
 
@@ -105,7 +122,9 @@ The retrieval-window descriptor $\chi_r$ provides a physical interpretation of t
 
 \subsection{Quantum Repeater Scaling}
 
+{\sloppy
 Scaling behavior for quantum repeaters has been analyzed under a range of homogeneous-chain assumptions. Razavi, Piani, and L{\"u}tkenhaus~\cite{razavi2009quantum} showed that finite memory coherence can change favorable polynomial distance scaling into an exponential degradation in $\sqrt{L}$ in their optimized repeater model. More recent work studies exact rate analysis with imperfect memories~\cite{kamin2023exact} and joint optimization of repeater count, spacing, and distillation under rate and fidelity constraints~\cite{chehimi2023scaling}. These results provide important benchmarks, but they do not directly address the cross-product of heterogeneous memory profiles and network topology studied here.
+}
 
 \subsection{Topology and Entanglement Distribution}
 
@@ -290,7 +309,9 @@ The atlas spans 6 representative memory profiles, 9 topology classes, 3 traffic 
 
 \subsection{Confirmatory Replication}
 
-A pre-specified confirmatory campaign spanning 6 profiles, 5 topologies (chain, star, RGG, lattice, scale-free), 3 traffic levels, 5 budgets $m \in \{1,2,4,8,16\}$, and 20 seeds produced a frozen dataset of 8{,}730 completed simulations (frozen file: \texttt{v05\_fixes/results/p2\_c3\_extended.csv}). The full Cartesian design contains $6 \times 5 \times 3 \times 5 \times 20 = 9{,}000$ cells; 270 cells (3.0\%) are missing due to disconnected random-geometric graphs and simulation failures. No missing cells are imputed. The completed dataset confirms:
+{\sloppy
+A pre-specified confirmatory campaign spanning 6 profiles, 5 topologies (chain, star, RGG, lattice, scale-free), 3 traffic levels, 5 budgets $m \in \{1,2,4,8,16\}$, and 20 seeds produced a frozen dataset of 8{,}730 completed simulations (frozen file: \allowbreak\texttt{v05\_fixes/results/p2\_c3\_extended.csv}). The full Cartesian design contains $6 \times 5 \times 3 \times 5 \times 20 = 9{,}000$ cells; 270 cells (3.0\%) are missing due to disconnected random-geometric graphs and simulation failures. No missing cells are imputed. The completed dataset confirms:
+}
 
 \begin{itemize}[leftmargin=2em]
 \item \textbf{C1 (family effect):} Memory family materially affects $A_{\rm req}$ (Trapped Ion mean$=0.453$ vs Superconducting mean$=0.003$). The tested cross-implementation analysis reproduced the ordering of the evaluated memory profiles under the fidelity-qualified metric, whereas absolute performance differences were implementation-sensitive.
@@ -706,7 +727,8 @@ The representative memory profiles used here are parameter bundles, not complete
 
 Memory capacity requirements in the tested quantum-network model depend on memory profile, topology, and traffic. The finite-grid threshold reaches the upper tested budget in 35.5\% of the reported regimes, and it must be distinguished from an asymptotic saturation capacity. The tested scalar reductions leave substantial topology-dependent variation. Correctly using retrieval decay time in $\chi_r$ provides a physical timescale descriptor but does not establish a universal sizing law. Heterogeneous placement favors hubs and betweenness-based nodes in aggregate, while topology-specific exceptions and coupling-dependent absolute performance limit generalization. These findings support explicit, model-specific capacity planning and targeted validation of the decisions to be deployed.
 
-\section*{Data Availability and Reproducibility}
+
+\section*{Data Availability}
 
 The manuscript and a repository scaffold are prepared for a dedicated public reproducibility release. The raw simulation datasets, frozen simulator, dependency lockfile, complete seed/configuration ledger, and figure-generation scripts have not yet been deposited in that release. The development repository is private. This revision therefore does not claim that the empirical results can already be reproduced from a public archive. A public release URL, commit identifier, checksums, and archival DOI should identify the completed deposit before submission.
 
@@ -714,23 +736,53 @@ The manuscript and a repository scaffold are prepared for a dedicated public rep
 
 A companion methods manuscript, ``Assessing Decision Reliability in Discrete-Event Simulation: A Quantum-Network Case Study,'' studies stochastic decision stability, metric semantics, and model sensitivity. The present article focuses on memory-profile, capacity, topology, and placement results. Shared simulator infrastructure and overlapping validation results should be disclosed to both editors.
 
-\section*{Competing Interests}
+\authorcontributions{
+Conceptualization, D.V.;
+methodology, D.V.;
+software, D.V.;
+validation, D.V.;
+formal analysis, D.V.;
+investigation, D.V.;
+resources, D.V.;
+data curation, D.V.;
+writing---original draft preparation, D.V.;
+writing---review and editing, D.V.;
+visualization, D.V.;
+supervision, D.V.;
+project administration, D.V.;
+funding acquisition, D.V.
+}
 
-The author is the founder of Vesterlund Ventures and WestQuant Open. The simulator used in this study (WestQuant) was developed by the author. This creates a potential conflict of interest insofar as the simulator's design choices may influence the results. The cross-implementation robustness check (Sec.~\ref{sec:cross_impl}) partially mitigates this concern by testing whether selected conclusions survive an independent implementation pathway, but does not eliminate it. The author has no external funding to declare.
+\funding{This research received no external funding. Computational resources were provided by the author's personal hardware. No GPU or compute-cluster grants were used.}
 
-\section*{Author Contributions}
+\institutionalreview{Not applicable.}
 
-D.V. conceived the study, designed and implemented the simulator, ran all experiments, performed all analyses, and wrote the manuscript.
+\informedconsent{Not applicable.}
 
-\section*{Funding}
+\dataavailability{The manuscript and a repository scaffold are prepared for a dedicated public reproducibility release. The raw simulation datasets, frozen simulator, dependency lockfile, complete seed/configuration ledger, and figure-generation scripts have not yet been deposited in that release. The development repository is private. A public release URL, commit identifier, checksums, and archival DOI should identify the completed deposit before submission.}
 
-This research received no external funding. Computational resources were provided by the author's personal hardware. No GPU or compute-cluster grants were used.
+\acknowledgments{The author acknowledges the use of open-source quantum-network simulation frameworks SeQUeNCe and SimQN in the cross-implementation robustness check. AI-assisted tools (Anthropic Claude, OpenAI ChatGPT, and Cognition Devin) were used during the preparation of this work, including assistance with code generation, manuscript organization, and editorial revision. The author takes full responsibility for the work.}
 
-\section*{Acknowledgments}
+\conflictsofinterest{The author is the founder of Vesterlund Ventures and WestQuant Open. The simulator used in this study (WestQuant) was developed by the author. This creates a potential conflict of interest insofar as the simulator's design choices may influence the results. The cross-implementation robustness check partially mitigates this concern by testing whether selected conclusions survive an independent implementation pathway, but does not eliminate it.}
 
-The author acknowledges the use of open-source quantum-network simulation frameworks SeQUeNCe~\cite{wu2021sequence} and SimQN in the cross-implementation robustness check.
+\abbreviations{Abbreviations}{
+The following abbreviations are used in this manuscript:\\
+\noindent
+\begin{tabular}{@{}ll}
+$T_2$ & Coherence time \\
+$\tau_r$ & Retrieval decay time \\
+$\eta_r$ & Retrieval efficiency \\
+$F_{\rm ro}$ & Readout fidelity \\
+$\chi_r$ & Retrieval-window parameter ($\tau_r p_{\rm gen} / t_{\rm attempt}$) \\
+$m_c$ & Critical memory capacity \\
+$A_{\rm req}$ & Requirement-qualified availability \\
+$A_{\rm qual}$ & Quality-qualified availability \\
+RGG & Random geometric graph \\
+AFC & Atomic frequency comb \\
+RF & Random Forest
+\end{tabular}
+}
 
-\textbf{AI-assisted tools.} AI-assisted tools (Anthropic Claude, OpenAI ChatGPT, and Cognition Devin) were used during the preparation of this work, including assistance with code generation, manuscript organization, and editorial revision. The author takes full responsibility for the work. During the preparation, several errors were introduced by the AI tools and caught by Claude acting as an external reviewer, including: (1) the original $\chi = T_2\, p_{\rm gen}/t_{\rm attempt}$ used the wrong lifetime parameter (corrected to $\chi_r = \tau_r\, p_{\rm gen}/t_{\rm attempt}$); (2) the $m=1$ failure was attributed to swap contention (corrected to slot contention after two-node testing); (3) predictive accuracy and invariance claims for $\chi_r$ were overstated and have been removed in this revision.
 
 \begin{thebibliography}{39}
 
